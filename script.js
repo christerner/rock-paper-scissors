@@ -10,7 +10,10 @@ let computerScore = 0;
 // A function that plays a single round
 function playRound(playerSelection, computerSelection) {
 
-    if(playerSelection === "rock" && computerSelection === "paper") {
+    if(playerSelection ===  computerSelection) {
+        return `It's a tie! Computer played ${computerSelection} and you played ${playerSelection}.`;
+
+    } else if(playerSelection === "rock" && computerSelection === "paper") {
         computerScore++;
         return `You lose! ${computerSelection} beats ${playerSelection}.`;
     
@@ -21,9 +24,6 @@ function playRound(playerSelection, computerSelection) {
     } else if(playerSelection === "paper" && computerSelection === "scissors") {
         computerScore++;
         return `You lose! ${computerSelection} beats ${playerSelection}.`;
-    
-    } else if(playerSelection ===  computerSelection) {
-        return `It's a tie! Computer played ${computerSelection} and you played ${playerSelection}.`;
     
     } else {
         playerScore++;
