@@ -4,14 +4,14 @@ function getComputerChoice() {
     return choice;
 }
 
-let playeScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 
 // A function that plays a single round
 function playRound(playerSelection, computerSelection) {
 
     if(playerSelection === "rock" && computerSelection === "paper") {
-        playeScore++;
+        computerScore++;
         return `You lose! ${computerSelection} beats ${playerSelection}.`;
     
     } else if(playerSelection === "scissors" && computerSelection === "rock") {
@@ -26,7 +26,7 @@ function playRound(playerSelection, computerSelection) {
         return `It's a tie! Computer played ${computerSelection} and you played ${playerSelection}.`;
     
     } else {
-        playeScore++;
+        playerScore++;
         return `You win! ${playerSelection} beats ${computerSelection}.`;
     }
     
@@ -61,14 +61,14 @@ function game() {
     console.log("Game over!")
     console.log("**********************");
         
-    if (computerScore > playeScore) {
-        console.log(`You lose the game! Computer score: ${computerScore}. Your score: ${playeScore}.`)
+    if (computerScore > playerScore) {
+        console.log(`You lose the game! Computer score: ${computerScore}. Your score: ${playerScore}.`)
     }
-    else if (computerScore === playeScore) {
-        console.log(`It's a tie! Computer score: ${computerScore}. Your score: ${playeScore}.`)
+    else if (computerScore === playerScore) {
+        console.log(`It's a tie! Computer score: ${computerScore}. Your score: ${playerScore}.`)
     }
     else {
-        console.log(`You win the game! Computer score: ${computerScore}. Your score: ${playeScore}.`)
+        console.log(`You win the game! Computer score: ${computerScore}. Your score: ${playerScore}.`)
     }
 }
 game();
